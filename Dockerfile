@@ -1,11 +1,11 @@
-FROM python3.11-buster
+FROM python:3.11-buster
 
 ENV PYTHONUNBUFFERED=1
 
 
 WORKDIR /app
 
-RUN apt-get update && apt install python3-dev
+RUN apt-get update && apt install python3-dev -y
 
 
 RUN pip install --upgrade pip
