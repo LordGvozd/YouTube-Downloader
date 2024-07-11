@@ -8,7 +8,7 @@ from config import VIDEO_DIR, AUDIO_DIR
 def download_video(youtube_video_link: str) -> str:
     youtube = YouTube(youtube_video_link)
 
-    video = youtube.streams.get_highest_resolution()
+    video = youtube.streams[0]
     video_output_path: PathLike[str] = VIDEO_DIR / video.default_filename
 
     video.download(filename=str(video_output_path))
